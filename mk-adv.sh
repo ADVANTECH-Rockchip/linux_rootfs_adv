@@ -23,6 +23,7 @@ apt-get install -y cmake
 
 apt-get install -y libjpeg-dev
 apt-get install -y libbsd-dev
+apt-get install -y git
 export HOME=/root
 EOF
 
