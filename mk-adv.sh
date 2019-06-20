@@ -20,5 +20,9 @@ apt-get install -y build-essential
 apt-get install -y autoconf automake libtool
 
 apt-get install -y cmake
+
+apt-get install -y libjpeg-dev
+apt-get install -y libbsd-dev
+export HOME=/root
 EOF
 
