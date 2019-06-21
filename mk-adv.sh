@@ -24,6 +24,7 @@ apt-get install -y cmake
 apt-get install -y libjpeg-dev
 apt-get install -y libbsd-dev
 apt-get install -y git
+apt-get install -y subversion
 export HOME=/root
 EOF
 
