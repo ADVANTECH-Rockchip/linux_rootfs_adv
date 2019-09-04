@@ -12,7 +12,7 @@ apt-get install -y stress
 apt-get install -y udhcpc
 apt-get install -y mplayer
 echo -e "root\nroot\n" | passwd root
-sudo cp /home/linaro/.Xauthority /root/.Xauthority
-git clone https://github.com/ADVANTECH-Corp/advtest-burnin.git /root/advtest -b dms_sa53
+
+#git clone https://github.com/ADVANTECH-Corp/advtest-burnin.git /root/advtest -b dms_sa53
 EOF
 
