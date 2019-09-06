@@ -10,7 +10,7 @@ apt-get update
 apt-get install -y dosfstools
 apt-get install -y stress
 apt-get install -y udhcpc
-apt-get install -y mplayer
+apt-get install -y bonnie++
 echo -e "root\nroot\n" | passwd root
 
 #git clone https://github.com/ADVANTECH-Corp/advtest-burnin.git /root/advtest -b dms_sa53
