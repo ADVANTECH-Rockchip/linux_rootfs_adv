@@ -73,6 +73,9 @@ chmod 0777 /oem
 
 ln -s /dev/disk/by-partlabel/misc /misc
 
+# for MPV
+chown -R linaro:linaro /home/linaro/.config
+
 #---------------Clean--------------
 sudo apt-get clean
 rm -rf /var/lib/apt/lists/*
