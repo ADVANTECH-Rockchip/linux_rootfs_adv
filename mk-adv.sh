@@ -2,6 +2,8 @@
 TARGET_ROOTFS_DIR="../rootfs/binary"
 
 echo "in mk-adv.sh"
+BUILD_IN_DOCKER=$1
+echo "BUILD_IN_DOCKER : $BUILD_IN_DOCKER"
 
 #---------------Overlay--------------
 echo "1.copy overlay"
@@ -41,6 +43,9 @@ apt-get install -y usb-modeswitch mobile-broadband-provider-info modemmanager
 
 #for bt udev
 apt-get install -y at
+apt-get install -y bluez-hcidump
+
+
 #for sync time
 apt-get install -y cron
 /tmp/timesync.sh
@@ -94,4 +99,9 @@ rm -rf packages/video/
 rm -rf packages/xserver/
 
 EOF
+
+if [ "$BUILD_IN_DOCKER" == "TRUE" ]; then
+	# network
+	sudo mv $TARGET_ROOTFS_DIR/etc/resolv.conf_back $TARGET_ROOTFS_DIR/etc/resolv.conf
+fi
 
