@@ -1,7 +1,13 @@
 #!/bin/sh
-#
-# advantech init....
-#
+### BEGIN INIT INFO
+# Provides:          advantech
+# Required-Start:
+# Required-Stop:
+# Default-Start: S
+# Default-Stop: 6
+# Short-Description:
+# Description:       Linux advinit
+### END INIT INFO
 
 case "$1" in
 start)
