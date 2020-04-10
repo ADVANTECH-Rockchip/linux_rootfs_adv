@@ -2,7 +2,7 @@
 TARGET_ROOTFS_DIR="../rootfs/binary"
 
 echo "in mk-adv.sh"
-BUILD_IN_DOCKER=$1
+
 echo "BUILD_IN_DOCKER : $BUILD_IN_DOCKER"
 
 #---------------Overlay--------------
