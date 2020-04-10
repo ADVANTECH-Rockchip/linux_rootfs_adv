@@ -19,10 +19,10 @@ fi
 sudo cp -rf adv-build/* $TARGET_ROOTFS_DIR/tmp/
 
 # For dotnet
-if [ 0 -eq `grep -c DOTNET_ROOT $TARGET_ROOTFS_DIR/etc/bash.bashrc` ]; then
-    sudo echo 'export PATH=$PATH:/usr/local/dotnet' >> $TARGET_ROOTFS_DIR/etc/bash.bashrc
-    sudo echo 'export DOTNET_ROOT=/usr/local/dotnet' >> $TARGET_ROOTFS_DIR/etc/bash.bashrc
-fi
+# if [ 0 -eq `grep -c DOTNET_ROOT $TARGET_ROOTFS_DIR/etc/bash.bashrc` ]; then
+#    sudo echo 'export PATH=$PATH:/usr/local/dotnet' >> $TARGET_ROOTFS_DIR/etc/bash.bashrc
+#    sudo echo 'export DOTNET_ROOT=/usr/local/dotnet' >> $TARGET_ROOTFS_DIR/etc/bash.bashrc
+# fi
 
 echo "2.install/remove/adjust debian"
 
@@ -45,6 +45,8 @@ apt-get install -y usb-modeswitch mobile-broadband-provider-info modemmanager
 apt-get install -y at
 apt-get install -y bluez-hcidump
 
+# for mosquitto
+apt-get install -y mosquitto mosquitto-dev libmosquitto-dev
 
 #for sync time
 apt-get install -y cron
@@ -57,9 +59,9 @@ apt-get install -f -y
 
 #for dotnet
 # .netcore
-sudo mkdir -p /usr/local/dotnet
-sudo cat packages/dotnet/dotnet-sdk-3.1.101-linux-arm.tar.gz* > packages/dotnet/dotnet-sdk-3.1.101-linux-arm.tar.gz
-sudo tar -xzf packages/dotnet/dotnet-sdk-*.tar.gz -C /usr/local/dotnet
+# sudo mkdir -p /usr/local/dotnet
+# sudo cat packages/dotnet/dotnet-sdk-3.1.101-linux-arm.tar.gz* > packages/dotnet/dotnet-sdk-3.1.101-linux-arm.tar.gz
+# sudo tar -xzf packages/dotnet/dotnet-sdk-*.tar.gz -C /usr/local/dotnet
 
 
 #---------------Adjust--------------
