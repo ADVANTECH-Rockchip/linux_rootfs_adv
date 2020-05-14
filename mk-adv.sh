@@ -53,6 +53,9 @@ apt-get install -y cron
 /tmp/timesync.sh
 rm /tmp/timesync.sh
 
+# For logrotate limit log size
+apt-get install -y logrotate
+
 #for docker
 dpkg -i  /packages/docker/*.deb
 apt-get install -f -y
@@ -65,7 +68,7 @@ apt-get install -f -y
 
 
 #---------------Adjust--------------
-update-rc.d advinit defaults
+systemctl enable advinit.service
 
 #for login
 echo "linaro:123456" | chpasswd
