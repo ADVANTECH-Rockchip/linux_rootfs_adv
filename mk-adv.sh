@@ -35,6 +35,8 @@ apt-get update
 apt-get install -y gnome-screenshot
 apt-get install -y mtd-utils
 apt-get install -y i2c-tools
+apt-get install -y minicom
+apt-get install -y ethtool
 #for rpmb
 apt-get install -y mmc-utils
 #for 4G
