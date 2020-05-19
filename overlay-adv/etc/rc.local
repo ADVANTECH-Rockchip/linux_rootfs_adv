@@ -15,7 +15,7 @@ echo BT_POWER:$BT_POWER
 if [ $BT_POWER -eq 0 ];then
     echo "BT_POWER is OFF"
     echo 1 > /sys/class/rfkill/rfkill0/state
-    sleep 1
+    sleep 6
 else
     echo "BT_POWER is Already On"
 fi
