@@ -1,0 +1,2 @@
+SUBSYSTEM=="net", ACTION=="add",KERNEL=="eth1", NAME="eth6"
+SUBSYSTEM=="net", ACTION=="add",KERNEL=="eth5", NAME="eth5"
