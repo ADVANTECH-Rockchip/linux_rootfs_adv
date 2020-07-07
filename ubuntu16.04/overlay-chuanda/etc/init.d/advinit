@@ -26,9 +26,8 @@ start)
     # for export gpio
     export-gpio.sh
 
-    # down and up eth0
-    ifconfig eth0 down
-    ifconfig eth0 up
+    # set default volume
+    amixer -c0 cset name="Speaker Playback Volume" 100%
     ;;
 stop)
     ;;

@@ -11,12 +11,12 @@ else
 	if [ -e $TARGET_ROOTFS_DIR ]; then
 		sudo rm -rf $TARGET_ROOTFS_DIR
 	fi
-    cat ubuntu-base/ubuntu16.04-*.tar.gz* > $RK_DEBIAN/ubuntu16.04-whole.tar.gz
+    cat ubuntu-base/ubuntu16.04-*.tar.gz* > ubuntu16.04-whole.tar.gz
 	sudo tar -xpf ubuntu16.04-whole.tar.gz
 fi
 
 # make chuanda
-sudo ./mk-chuada.sh
+sudo ./mk-chuanda.sh
 
 # mk-image
 sudo ./mk-image.sh

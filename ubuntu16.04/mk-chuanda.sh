@@ -1,9 +1,7 @@
 #!/bin/bash -e
 TARGET_ROOTFS_DIR="binary"
-VERSION=V1600
 
 sudo cp -rf overlay-chuanda/* $TARGET_ROOTFS_DIR/
-sudo echo $VERSION > $TARGET_ROOTFS_DIR/etc/version
 
 finish() {
 	sudo umount $TARGET_ROOTFS_DIR/dev
@@ -63,6 +61,14 @@ ln -s /dev/disk/by-partlabel/misc /misc
 #set hostname
 echo "Ubuntu16-04" > /etc/hostname
 echo -e "127.0.0.1    localhost \n127.0.1.1    `cat /etc/hostname`\n" > /etc/hosts
+
+# custom app
+cd /root/
+mkdir Desktop
+mv /tmp/PadTest_install.bin /root/Desktop/
+cd /root/Desktop/
+./PadTest_install.bin
+rm ./PadTest_install.bin
 
 #---------------Clean--------------
 sudo apt-get clean
