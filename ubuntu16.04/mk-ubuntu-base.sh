@@ -120,6 +120,7 @@ ssh-import-id \
 strace \
 sudo \
 trace-cmd \
+tzdata \
 udev \
 unzip \
 usb-modeswitch \

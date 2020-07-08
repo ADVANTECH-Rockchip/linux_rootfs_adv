@@ -22,6 +22,7 @@ apt-get install -y gstreamer0.10-*
 apt-get install -y libqt5multimedia5-plugins
 apt-get install -y libjasper-dev
 apt-get install -y libqt5serialport5-dev
+apt-get install -y tzdata
 
 
 #---------------Adjust--------------
@@ -48,6 +49,7 @@ rm /usr/share/fonts/X11/misc/wenquanyi* -rf
 
 #timezone
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo "Asia/Shanghai" >/etc/timezone
 
 #mount userdata to /userdata
 rm /userdata /oem /misc -rf
