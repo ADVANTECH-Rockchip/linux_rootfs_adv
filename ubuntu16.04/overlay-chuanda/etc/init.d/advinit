@@ -23,6 +23,10 @@ start)
     # for uart RS232 or RS485 mode
     cp210x_232_485
 
+    # down and up eth0
+    ifconfig eth0 down
+    ifconfig eth0 up
+
     # for export gpio
     export-gpio.sh
 
