@@ -12,3 +12,4 @@
 rootfs
 binary
 rootfs.img
+ubuntu16.04/ubuntu*.tar.gz

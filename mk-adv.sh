@@ -101,6 +101,7 @@ locale-gen
 
 #timezone
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo "Asia/Shanghai" >/etc/timezone
 
 #mount userdata to /userdata
 rm /userdata /oem /misc -rf
