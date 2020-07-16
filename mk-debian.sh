@@ -18,13 +18,13 @@ fi
 
 # make rockchip
 cd $TOP_DIR/$RK_DEBIAN
-sudo ARCH=arm64 ./mk-rootfs-stretch.sh
+ARCH=arm64 ./mk-rootfs-stretch.sh
 
 # make adv
 cd $TOP_DIR/$ADV_DEBIAN
-sudo ARCH=arm64 ./mk-adv.sh
+ARCH=arm64 ./mk-adv.sh
 
 # mk-image
 cd $TOP_DIR/$RK_DEBIAN
-sudo ./mk-image.sh
+./mk-image.sh
 
