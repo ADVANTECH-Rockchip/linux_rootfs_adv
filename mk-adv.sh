@@ -56,6 +56,10 @@ apt-get install -y usb-modeswitch mobile-broadband-provider-info modemmanager
 apt-get install -y at
 apt-get install -y bluez-hcidump
 
+# for camera
+apt-get install -y v4l-utils
+apt-get install -y guvcview
+
 # for mosquitto
 apt-get install -y mosquitto mosquitto-dev libmosquitto-dev
 

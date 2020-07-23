@@ -1,11 +1,15 @@
 #!/bin/bash -e
 TARGET_ROOTFS_DIR="binary"
+RK_DIR="../../debian"
 
 echo "in mk-adv.sh"
 
 echo "BUILD_IN_DOCKER : $BUILD_IN_DOCKER"
 
 #---------------Overlay--------------
+sudo mkdir -p $TARGET_ROOTFS_DIR/packages
+sudo cp -rf $RK_DIR/packages/$ARCH/* $TARGET_ROOTFS_DIR/packages
+
 echo "1.copy overlay"
 sudo cp -rf overlay-adv/* $TARGET_ROOTFS_DIR/
 
@@ -70,6 +74,17 @@ apt-get install -y xfonts-intl-chinese xfonts-wqy ttf-wqy-microhei ttf-dejavu
 apt-get install -y logrotate
 apt-get install -y tzdata
 
+# Camera
+apt-get install cheese -y
+dpkg -i  /packages/others/camera/*.deb
+if [ "$ARCH" == "armhf" ]; then
+       cp /packages/others/camera/libv4l-mplane.so /usr/lib/arm-linux-gnueabihf/libv4l/plugins/
+elif [ "$ARCH" == "arm64" ]; then
+       cp /packages/others/camera/libv4l-mplane.so /usr/lib/aarch64-linux-gnu/libv4l/plugins/
+fi
+
+apt-get install -y v4l-utils
+apt-get install -y guvcview
 
 #---------------Adjust--------------
 systemctl enable advinit.service
@@ -113,6 +128,8 @@ echo -e "127.0.0.1    localhost \n127.0.1.1    `cat /etc/hostname`\n" > /etc/hos
 
 #---------------Clean--------------
 sudo apt-get clean
+apt autoremove -y
+rm -rf /packages
 rm -rf /var/lib/apt/lists/*
 EOF
 

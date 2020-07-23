@@ -20,7 +20,7 @@ else
 fi
 
 # make adv
-./mk-adv.sh
+ARCH=arm64 ./mk-adv.sh
 
 # mk-image
 ./mk-image.sh
