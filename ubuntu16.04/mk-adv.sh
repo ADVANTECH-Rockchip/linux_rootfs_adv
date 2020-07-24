@@ -91,6 +91,9 @@ systemctl enable advinit.service
 systemctl enable ModemManager.service
 systemctl enable pppd-dns.service
 
+systemctl mask systemd-networkd-wait-online.service
+systemctl mask NetworkManager-wait-online.service
+
 #for login
 useradd -s '/bin/bash' -m -G adm,sudo,plugdev,audio,video adv
 echo "adv:123456" | chpasswd
