@@ -8,7 +8,7 @@ echo "BUILD_IN_DOCKER : $BUILD_IN_DOCKER"
 #---------------Overlay--------------
 echo "1.copy overlay"
 sudo cp -rf overlay-adv/* $TARGET_ROOTFS_DIR/
-#sudo cp -rf packages-adv/$ARCH/* $TARGET_ROOTFS_DIR/packages/
+sudo cp -rf packages-adv/$ARCH/* $TARGET_ROOTFS_DIR/packages/
 
 #if [ "$VERSION" != "debug" ] || [ "$VERSION" != "jenkins" ]; then
 #	echo -e "\033[36m Copy  overlay-debug \033[0m"
@@ -16,7 +16,7 @@ sudo cp -rf overlay-adv/* $TARGET_ROOTFS_DIR/
 #	sudo cp -rf ../debian/overlay-debug/* $TARGET_ROOTFS_DIR/
 #fi
 
-#sudo cp -rf adv-build/* $TARGET_ROOTFS_DIR/tmp/
+sudo cp -rf adv-build/* $TARGET_ROOTFS_DIR/tmp/
 
 # For dotnet
 # if [ 0 -eq `grep -c DOTNET_ROOT $TARGET_ROOTFS_DIR/etc/bash.bashrc` ]; then
@@ -75,8 +75,8 @@ apt-get install -y xfonts-intl-chinese xfonts-wqy ttf-wqy-microhei ttf-dejavu
 apt-get install -y logrotate
 
 #for docker
-#dpkg -i  /packages/docker/*.deb
-#apt-get install -f -y
+dpkg -i  /packages/docker/*.deb
+apt-get install -f -y
 
 #for dotnet
 # .netcore
