@@ -6,7 +6,7 @@
 	notifempty
 	delaycompress
 	compress
-	size 1M
+	size 5M
 	postrotate
 		invoke-rc.d rsyslog rotate > /dev/null
 	endscript
@@ -32,7 +32,7 @@
 	compress
 	delaycompress
 	sharedscripts
-	size 1M
+	size 5M
 	postrotate
 		invoke-rc.d rsyslog rotate > /dev/null
 	endscript

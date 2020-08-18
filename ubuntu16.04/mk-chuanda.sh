@@ -24,6 +24,8 @@ apt-get install -y libjasper-dev
 apt-get install -y libqt5serialport5-dev
 apt-get install -y tzdata
 
+# For logrotate limit log size
+apt-get install -y logrotate
 
 #---------------Adjust--------------
 systemctl enable advinit.service
