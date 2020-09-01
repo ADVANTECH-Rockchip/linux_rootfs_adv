@@ -27,6 +27,24 @@ apt-get install -y tzdata
 # For logrotate limit log size
 apt-get install -y logrotate
 
+# For Camera
+apt-get install -y v4l-utils
+apt-get install -y guvcview cheese camorama
+
+#---------------Rga--------------
+dpkg -i /packages/rga/*.deb
+echo -e "\033[36m Setup Video.................... \033[0m"
+apt-get install -f -y
+
+echo "deb http://ports.ubuntu.com/ubuntu-ports/ bionic main restricted" >> /etc/apt/sources.list
+apt-get update
+
+dpkg -i /packages/xserver/*.deb
+apt-get install -f -y
+
+sed -i '/bionic/'d /etc/apt/sources.list
+apt-get update
+
 #---------------Adjust--------------
 systemctl enable advinit.service
 
@@ -75,6 +93,7 @@ cd /root/Desktop/
 rm ./PadTest_install.bin
 
 #---------------Clean--------------
+rm -rf /packages/
 sudo apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
