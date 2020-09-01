@@ -23,6 +23,7 @@ apt-get install -y libqt5multimedia5-plugins
 apt-get install -y libjasper-dev
 apt-get install -y libqt5serialport5-dev
 apt-get install -y tzdata
+apt-get install -y ftp
 
 # For logrotate limit log size
 apt-get install -y logrotate

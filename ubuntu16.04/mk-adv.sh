@@ -48,6 +48,7 @@ apt-get install -y minicom
 apt-get install -y ethtool
 apt-get install -y pciutils
 apt-get install -y hdparm
+apt-get install -y ftp
 #for rpmb
 #apt-get install -y mmc-utils
 #for 4G
