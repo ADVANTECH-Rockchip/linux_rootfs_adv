@@ -28,6 +28,10 @@ apt-get install -y ftp
 # For logrotate limit log size
 apt-get install -y logrotate
 
+#for docker
+dpkg -i  /packages/docker/*.deb
+apt-get install -f -y
+
 # For Camera
 apt-get install -y v4l-utils
 apt-get install -y guvcview cheese camorama
