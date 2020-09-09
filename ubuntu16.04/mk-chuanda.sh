@@ -33,8 +33,41 @@ dpkg -i  /packages/docker/*.deb
 apt-get install -f -y
 
 # For Camera
-apt-get install -y v4l-utils
-apt-get install -y guvcview cheese camorama
+#apt-get install -y v4l-utils
+#apt-get install -y guvcview cheese camorama
+
+#---------------rk1808--------------
+apt-get install -y build-essential python-dev python-setuptools python-pip libssl-dev openssl \
+libsqlite3-dev libgdbm-dev libxft-dev libfontconfig1-dev libfreetype6-dev libpng-dev libc6-dev \
+python-smbus zlib1g-dev libncurses5 libncurses5-dev libncursesw5 libbz2-dev lzma liblzma-dev libreadline-dev \
+uuid-dev libffi-dev libopenblas-dev bliss mklibs libprotobuf-dev protobuf-compiler libjpeg62 libfreeimage-dev \
+libgoogle-glog-dev python-yaml libhdf5-serial-dev hdf5-tools libhdf5-dev gfortran python-h5py
+
+apt-get install -y tk8.6-dev
+
+cd /rk1808
+tar -xzvf cmake-3.10.0.tar.gz
+tar -xzvf Python-3.7.6.tgz
+
+cd /rk1808/cmake-3.10.0
+./configure
+make
+make install
+
+cd /rk1808/Python-3.7.6
+./configure --enable-optimizations
+make -j6
+make install
+
+cd /rk1808/
+update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+update-alternatives --install /usr/bin/python python /usr/local/bin/python3.7 150
+
+pip3 install --user -U pip && pip3 uninstall pep517 && pip3 uninstall toml && pip3 install --user -U setuptools==46.2.0
+pip3 install --user Cython==0.29.17
+pip3 install --user rknn-1.3.0-cp37-cp37m-linux_aarch64.whl
+pip3 install --user tensorflow-1.14.0-cp37-none-linux_aarch64.whl
+pip3 install --user matplotlib
 
 #---------------Rga--------------
 dpkg -i /packages/rga/*.deb
@@ -47,11 +80,15 @@ apt-get update
 dpkg -i /packages/xserver/*.deb
 apt-get install -f -y
 
+dpkg -i /packages/xserver/*.deb
+apt-get install -f -y
+
 sed -i '/bionic/'d /etc/apt/sources.list
 apt-get update
 
 #---------------Adjust--------------
 systemctl enable advinit.service
+systemctl enable adv-update-ota.service
 
 #for login
 useradd -s '/bin/bash' -m -G adm,sudo,plugdev,audio,video adv
@@ -99,8 +136,12 @@ rm ./PadTest_install.bin
 
 #---------------Clean--------------
 rm -rf /packages/
-sudo apt-get clean
+rm -rf /rk1808/
+rm -rf /root/.cache/
+rm -rf /var/cache/apt/apt-file/*
+apt-get clean
 rm -rf /var/lib/apt/lists/*
+
 EOF
 
 
