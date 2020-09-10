@@ -34,7 +34,6 @@ start)
     amixer -c0 cset name="Speaker Playback Volume" 100%
 
     # mount userdata and oem
-    mount /dev/disk/by-partlabel/oem /oem
     mount /dev/disk/by-partlabel/userdata /userdata
     ;;
 stop)

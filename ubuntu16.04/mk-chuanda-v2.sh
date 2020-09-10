@@ -17,8 +17,12 @@ cat <<EOF | sudo chroot $TARGET_ROOTFS_DIR
 #--------- install base app ---------
 
 
+# custom app
+cp -rf /tmp/RGB_update_CDZS /root/Desktop/
 
 #---------------Clean--------------
+rm -rf /tmp/PadTest_install.bin
+rm -rf /tmp/RGB_update_CDZS/
 rm -rf /packages/
 rm -rf /rk1808/
 rm -rf /root/.cache/

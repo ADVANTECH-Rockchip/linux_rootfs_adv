@@ -1,0 +1,5 @@
+1、把文件夹拷贝到桌面
+2、进入zxczBurnAp文件夹
+3、直接运行./zxczBurnAp-new
+4、固件烧录完成有burner fw success提示 ,然后reboot重启即可
+注意事项：升级过程中，RGB没有被调用，不能有视频输出！否则会升级失败！
