@@ -21,6 +21,7 @@ cat <<EOF | sudo chroot $TARGET_ROOTFS_DIR
 cp -rf /tmp/RGB_update_CDZS /root/Desktop/
 
 #---------------Clean--------------
+rm -rf /etc/ftp_config.ini
 rm -rf /tmp/PadTest_install.bin
 rm -rf /tmp/RGB_update_CDZS/
 rm -rf /packages/
