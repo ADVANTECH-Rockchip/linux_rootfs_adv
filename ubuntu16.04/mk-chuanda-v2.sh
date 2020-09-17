@@ -36,6 +36,9 @@ mv -f /etc/xdg/autostart/blueman.desktop.back /etc/xdg/autostart/blueman.desktop
 apt-get install -y at
 apt-get install -y bluez-hcidump
 
+#---------------Adjust--------------
+systemctl mask systemd-networkd-wait-online.service
+systemctl mask NetworkManager-wait-online.service
 
 # custom app
 cp -rf /tmp/RGB_update_CDZS /root/Desktop/
