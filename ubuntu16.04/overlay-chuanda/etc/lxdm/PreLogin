@@ -1,6 +1,15 @@
 #!/bin/sh
 #
 # Note: this is a sample and will not be run as is.
+RESET_CAM=0
+if [ ! -c /dev/video0 ];then
+    RESET_CAM=1
+fi
+
+if [ $RESET_CAM -eq 1 ];then
+    echo 0 > /sys/class/gpio/gpio157/value
+fi
+
 # xrandr -o left
 xrandr --output HDMI-1 --rotate left
 xrandr --output DSI-1 --rotate left
@@ -9,3 +18,8 @@ xrandr --output DSI-1 --rotate left
 feh -F /etc/lxdm/logo.png &
 sleep 2
 ps -ef |grep feh |awk '{print $2}' |xargs kill -9
+
+if [ $RESET_CAM -eq 1 ];then
+    echo 1 > /sys/class/gpio/gpio157/value
+fi
+
