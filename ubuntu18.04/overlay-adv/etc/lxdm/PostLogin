@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Note: this is a sample and will not be run as is.
+
+export DISPLAY=:0.0
+
+XRANDR_CONFIG="/home/adv/.config/autostart/lxrandr-autostart.desktop"
+
+MONITORS=$(xrandr|grep -w connected|cut -d' ' -f1)
+for monitor in $MONITORS;do
+    echo $monitor
+    xrandr --output $monitor --off
+done
+
+sleep 2
+
+if [ -f ${XRANDR_CONFIG} ];then
+   CMD=`grep Exec ${XRANDR_CONFIG} | cut -d" " -f 3- | cut -d"'" -f2`
+   $CMD
+else
+    for monitor in $MONITORS;do
+        echo $monitor
+        xrandr --output $monitor --auto
+    done
+fi
+
+
