@@ -95,8 +95,12 @@ fi
 apt-get install -y v4l-utils
 apt-get install -y guvcview
 
-# gst
+# qt
 apt-get install -y gdbserver
+apt-get install -y libqt5webenginecore5
+apt-get install -y libqt5quickwidgets5
+apt-get install -y libqt5webenginewidgets5
+
 
 #---------------Adjust--------------
 systemctl enable advinit.service

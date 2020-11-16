@@ -68,6 +68,7 @@ if [ -e "/usr/lib/aarch64-linux-gnu" ]; then
     ln -sf libMali.so libGLESv1_CM.so
     ln -sf libMali.so libGLESv1_CM.so.1
     ln -sf libMali.so libGLESv1_CM.so.1.1
+    ln -sf libMali.so libmali.so.1
 
 fi
 if [ -e "/usr/lib/arm-linux-gnueabihf" ]; then
