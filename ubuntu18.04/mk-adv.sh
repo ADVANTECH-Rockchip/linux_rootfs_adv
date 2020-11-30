@@ -48,6 +48,8 @@ apt-get install -y ftp
 apt-get install -y mpv
 #for rpmb
 #apt-get install -y mmc-utils
+#for can
+apt-get install -y can-utils
 #for 4G
 apt-get install -y libpcap0.8 ppp
 apt-get install -y usb-modeswitch mobile-broadband-provider-info modemmanager

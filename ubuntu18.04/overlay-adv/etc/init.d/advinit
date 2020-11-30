@@ -26,6 +26,9 @@ start)
     # down and up eth0
     ifconfig eth0 down
     ifconfig eth0 up
+
+    # for can f81601
+    insmod /system/lib/modules/f81601.ko enable_mem_access=1
     ;;
 stop)
     ;;
