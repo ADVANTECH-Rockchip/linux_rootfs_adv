@@ -4,6 +4,7 @@ TARGET_ROOTFS_DIR="../rootfs/binary"
 echo "in mk-adv.sh"
 
 echo "BUILD_IN_DOCKER : $BUILD_IN_DOCKER"
+echo "BUILD_IN_CHINA : $BUILD_IN_CHINA"
 
 #---------------Overlay--------------
 echo "1.copy overlay"
@@ -58,6 +59,14 @@ rm /tmp/timesync.sh
 # For logrotate limit log size
 apt-get install -y logrotate
 
+#for qt5
+apt-get install -y gdbserver
+apt-get install -y libqt5webenginecore5
+apt-get install -y libqt5quickwidgets5
+apt-get install -y libqt5webenginewidgets5
+#dpkg -i  /packages/qt5/*.deb
+#apt-get install -f -y
+
 #for docker
 dpkg -i  /packages/docker/*.deb
 apt-get install -f -y
@@ -93,6 +102,7 @@ sudo apt-get clean
 rm -rf /var/lib/apt/lists/*
 rm -rf packages/docker/
 rm -rf packages/dotnet/
+rm -rf packages/qt5/
 rm -rf packages/ffmpeg/
 rm -rf packages/gst-bad/
 rm -rf packages/gst-base/
@@ -111,4 +121,10 @@ if [ "$BUILD_IN_DOCKER" == "TRUE" ]; then
 	# network
 	sudo mv $TARGET_ROOTFS_DIR/etc/resolv.conf_back $TARGET_ROOTFS_DIR/etc/resolv.conf
 fi
+
+if [ "$BUILD_IN_CHINA" == "TRUE" ]; then
+	# network
+	sudo cp $TARGET_ROOTFS_DIR/etc/apt/sources.list.back $TARGET_ROOTFS_DIR/etc/apt/sources.list
+fi
+
 
