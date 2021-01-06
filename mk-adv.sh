@@ -10,7 +10,7 @@ echo "1.copy overlay"
 sudo cp -rf overlay-adv/* $TARGET_ROOTFS_DIR/
 sudo cp -rf packages-adv/$ARCH/* $TARGET_ROOTFS_DIR/packages/
 
-sudo find ../../kernel/drivers/bluetooth/*  -name "*.ko" | \
+sudo find ../kernel/drivers/bluetooth/*  -name "*.ko" | \
     xargs -n1 -i sudo cp {} $TARGET_ROOTFS_DIR/system/lib/modules/
 
 #if [ "$VERSION" != "debug" ] || [ "$VERSION" != "jenkins" ]; then
@@ -149,5 +149,9 @@ sudo umount $TARGET_ROOTFS_DIR/dev
 if [ "$BUILD_IN_DOCKER" == "TRUE" ]; then
 	# network
 	sudo mv $TARGET_ROOTFS_DIR/etc/resolv.conf_back $TARGET_ROOTFS_DIR/etc/resolv.conf
+fi
+
+if [ "$BUILD_IN_CHINA" == "TRUE" ]; then
+	sudo cp $TARGET_ROOTFS_DIR/etc/apt/sources.list.back $TARGET_ROOTFS_DIR/etc/apt/sources.list
 fi
 
