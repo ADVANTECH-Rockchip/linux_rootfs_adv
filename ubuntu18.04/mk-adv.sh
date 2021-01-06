@@ -16,6 +16,9 @@ sudo mkdir -p $TARGET_ROOTFS_DIR/system/lib/modules/
 sudo find ../../kernel/drivers/net/wireless/rockchip_wlan/*  -name "*.ko" | \
     xargs -n1 -i sudo cp {} $TARGET_ROOTFS_DIR/system/lib/modules/
 
+sudo find ../../kernel/drivers/bluetooth/*  -name "*.ko" | \
+    xargs -n1 -i sudo cp {} $TARGET_ROOTFS_DIR/system/lib/modules/
+
 
 if [ "$BUILD_IN_DOCKER" == "TRUE" ]; then
     # network
