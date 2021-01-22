@@ -44,6 +44,7 @@ apt-get install -y mtd-utils
 apt-get install -y i2c-tools
 apt-get install -y minicom
 apt-get install -y ethtool
+apt-get install -y iperf3
 apt-get install -y pciutils
 apt-get install -y hdparm
 apt-get install -y ftp
@@ -112,8 +113,8 @@ sed -i 's/# zh_TW.UTF-8 UTF-8/zh_TW.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
 #timezone
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-echo "Asia/Shanghai" >/etc/timezone
+#ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+#echo "Asia/Shanghai" >/etc/timezone
 
 #mount userdata to /userdata
 rm /userdata /oem /misc -rf

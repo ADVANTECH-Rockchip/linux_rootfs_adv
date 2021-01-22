@@ -22,8 +22,8 @@ cd $TOP_DIR/$RK_DEBIAN
 ARCH=arm64 ./mk-rootfs-buster.sh
 
 # make adv
-#cd $TOP_DIR/$ADV_DEBIAN
-#ARCH=arm64 ./mk-adv.sh
+cd $TOP_DIR/$ADV_DEBIAN
+ARCH=arm64 ./mk-adv.sh
 
 # mk-image
 cd $TOP_DIR/$RK_DEBIAN
