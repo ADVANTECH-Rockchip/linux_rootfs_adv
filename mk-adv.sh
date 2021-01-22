@@ -47,6 +47,7 @@ apt-get install -y mtd-utils
 apt-get install -y i2c-tools
 apt-get install -y minicom
 apt-get install -y ethtool
+apt-get install -y iperf3
 apt-get install -y pciutils
 apt-get install -y hdparm
 apt-get install -y ftp
