@@ -89,6 +89,7 @@ apt-get install -y qt5-qmake
 
 #---------------Adjust--------------
 systemctl enable advinit.service
+systemctl disable hostapd.service
 
 #for login
 echo "linaro:123456" | chpasswd
