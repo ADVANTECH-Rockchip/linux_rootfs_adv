@@ -89,7 +89,6 @@ apt-get install -y qt5-qmake
 
 #---------------Adjust--------------
 systemctl enable advinit.service
-systemctl disable hostapd.service
 
 #for login
 echo "linaro:123456" | chpasswd
@@ -122,6 +121,10 @@ ln -s /dev/disk/by-partlabel/misc /misc
 # for docker
 update-alternatives --set iptables /usr/sbin/iptables-legacy
 update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+
+# for default browser
+ln -s /usr/bin/chromium /etc/alternatives/x-www-browser
+ln -s /etc/alternatives/x-www-browser /usr/bin/x-www-browser
 
 #---------------Clean--------------
 sudo apt-get clean

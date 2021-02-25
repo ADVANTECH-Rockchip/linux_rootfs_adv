@@ -19,6 +19,9 @@ start)
     if [ -d "/userdata" ];then
         chmod 0777 /userdata 
     fi
+
+    # stop hostapd.service
+    systemctl stop hostapd.service
     ;;
 stop)
     ;;
