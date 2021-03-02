@@ -25,6 +25,9 @@ start)
 
     # for can f81601
     insmod /system/lib/modules/f81601.ko enable_mem_access=1
+
+    # stop hostapd.service
+    systemctl stop hostapd.service
     ;;
 stop)
     ;;
