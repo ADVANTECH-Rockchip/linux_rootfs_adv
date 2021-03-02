@@ -128,6 +128,10 @@ ln -s /dev/disk/by-partlabel/misc /misc
 # for MPV
 #chown -R linaro:linaro /home/linaro/.config
 
+# for docker
+update-alternatives --set iptables /usr/sbin/iptables-legacy
+update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+
 
 #---------------Clean--------------
 sudo apt-get clean
