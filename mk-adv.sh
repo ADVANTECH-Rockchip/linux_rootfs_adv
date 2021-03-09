@@ -96,6 +96,9 @@ apt-get install -y gdbserver
 apt-get install -y libqt5webenginecore5
 apt-get install -y libqt5quickwidgets5
 apt-get install -y libqt5webenginewidgets5
+apt-get install -y libqt5*-dev
+apt-get install -y qt*-dev
+apt-get install -y qt5-qmake
 
 #---------------Adjust--------------
 systemctl enable advinit.service
