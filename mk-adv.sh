@@ -10,6 +10,9 @@ echo "1.copy overlay"
 sudo cp -rf overlay-adv/* $TARGET_ROOTFS_DIR/
 sudo cp -rf packages-adv/$ARCH/* $TARGET_ROOTFS_DIR/packages/
 
+sudo find ../kernel/drivers/bluetooth/*  -name "*.ko" | \
+    xargs -n1 -i sudo cp {} $TARGET_ROOTFS_DIR/system/lib/modules/
+
 #if [ "$VERSION" != "debug" ] || [ "$VERSION" != "jenkins" ]; then
 #	echo -e "\033[36m Copy  overlay-debug \033[0m"
 #	# adb, video, camera  test file
