@@ -146,7 +146,6 @@ ln -s /etc/alternatives/x-www-browser /usr/bin/x-www-browser
 sudo apt-get clean
 rm -rf /var/lib/apt/lists/*
 rm -rf packages/docker/
-rm -rf packages/dotnet/
 rm -rf packages/ffmpeg/
 rm -rf packages/gst-bad/
 rm -rf packages/gst-base/
@@ -158,6 +157,11 @@ rm -rf packages/others/
 rm -rf packages/rga/
 rm -rf packages/video/
 rm -rf packages/xserver/
+rm -rf packages/chromium/
+rm -rf packages/libv4l/
+rm -rf packages/mpp/
+rm -rf packages/pcmanfm/
+rm -rf packages/rkisp/
 
 EOF
 
