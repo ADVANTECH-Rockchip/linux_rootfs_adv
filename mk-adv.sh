@@ -142,6 +142,9 @@ update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 ln -s /usr/bin/chromium /etc/alternatives/x-www-browser
 ln -s /etc/alternatives/x-www-browser /usr/bin/x-www-browser
 
+# source.lists
+cp /etc/apt/sources.list.back /etc/apt/sources.list -rf
+
 #---------------Clean--------------
 sudo apt-get clean
 rm -rf /var/lib/apt/lists/*
