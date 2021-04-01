@@ -155,9 +155,9 @@ if [ "$BUILD_IN_DOCKER" == "TRUE" ]; then
 	sudo mv $TARGET_ROOTFS_DIR/etc/resolv.conf_back $TARGET_ROOTFS_DIR/etc/resolv.conf
 fi
 
-if [ "$BUILD_IN_CHINA" == "TRUE" ]; then
+#if [ "$BUILD_IN_CHINA" == "TRUE" ]; then
 	# network
 	sudo cp $TARGET_ROOTFS_DIR/etc/apt/sources.list.back $TARGET_ROOTFS_DIR/etc/apt/sources.list
-fi
+#fi
 
 
