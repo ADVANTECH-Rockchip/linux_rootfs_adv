@@ -1,0 +1,4 @@
+SUBSYSTEM=="net", ACTION=="add",KERNEL=="wlan0", NAME="wlan0"
+SUBSYSTEM=="net", ACTION=="add",KERNEL=="p2p0", NAME="p2p0"
+SUBSYSTEM=="net", ACTION=="add",KERNEL=="eth1", NAME="eth6"
+SUBSYSTEM=="net", ACTION=="add",KERNEL=="eth5", NAME="eth5"
