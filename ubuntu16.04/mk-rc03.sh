@@ -25,19 +25,13 @@ trap finish ERR
 cat <<EOF | sudo chroot $TARGET_ROOTFS_DIR
 
 #--------- install base app ---------
-apt-get update
-
 #for bt udev
 chmod o+x /usr/lib/dbus-1.0/dbus-daemon-launch-helper
 echo exit 101 > /usr/sbin/policy-rc.d
 chmod +x /usr/sbin/policy-rc.d
-apt-get install -y blueman
 rm -f /usr/sbin/policy-rc.d
 rm /etc/xdg/autostart/blueman.desktop
 mv -f /etc/xdg/autostart/blueman.desktop.back /etc/xdg/autostart/blueman.desktop
-
-apt-get install -y at
-apt-get install -y bluez-hcidump
 
 #---------------Adjust--------------
 systemctl mask systemd-networkd-wait-online.service
