@@ -146,7 +146,7 @@ if [ $UPDATE_PROCESS_COUNT -gt 0 ]; then
 fi
 
 # check project
-SUPPORT_PROJECT=("RSB-3710" "RSB-4710" "ROM-5780")
+SUPPORT_PROJECT=("RSB-3710" "RSB-4710" "ROM-5780" "RC03")
 
 SUPPORT_UPDATE=FALSE
 if [ ! -f "/proc/board" ]; then
