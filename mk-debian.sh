@@ -10,6 +10,7 @@ echo "BUILD_IN_DOCKER : $BUILD_IN_DOCKER"
 # make debian base
 if [ "$1" == "new" ]; then
     echo "make debian base new"
+    cd $TOP_DIR/$RK_DEBIAN
     sudo ARCH=armhf RELEASE=buster ./mk-base-debian.sh
 else
     echo "use exist debian base"

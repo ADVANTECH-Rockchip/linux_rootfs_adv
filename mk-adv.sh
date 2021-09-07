@@ -32,6 +32,7 @@ sudo mount -o bind /dev $TARGET_ROOTFS_DIR/dev
 cat <<EOF | sudo chroot $TARGET_ROOTFS_DIR
 
 #---------------Remove--------------
+apt-get remove -y udisks2
 
 #---------------Install--------------
 apt-get update
