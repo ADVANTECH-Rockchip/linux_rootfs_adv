@@ -1,0 +1,3 @@
+# Media automounting
+SUBSYSTEM=="block", ACTION=="add", RUN+="/usr/local/bin/automount.sh"
+SUBSYSTEM=="block", ACTION=="remove", RUN+="/usr/local/bin/automount.sh"
