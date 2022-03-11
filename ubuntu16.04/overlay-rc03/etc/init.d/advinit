@@ -22,7 +22,7 @@ start)
 
     # set default volume
 	AUDIO=$(aplay -l | grep rt5660 | cut -c 6)
-    amixer -c$AUDIO cset name="Speaker Playback Volume" 80%
+    amixer -c$AUDIO cset name="Speaker Playback Volume" 30%
 	
     # mount userdata and oem
     mount /dev/disk/by-partlabel/userdata /userdata
