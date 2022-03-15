@@ -73,14 +73,14 @@ apt-get install -y mosquitto mosquitto-dev libmosquitto-dev
 
 #for sync time
 apt-get install -y cron
-/tmp/timesync.sh
-rm /tmp/timesync.sh
+mv /etc/crontab.back /etc/crontab
 
 #for Chinese fonts
 apt-get install -y xfonts-intl-chinese xfonts-wqy ttf-wqy-microhei ttf-dejavu
 
 # For logrotate limit log size
 apt-get install -y logrotate
+mv /etc/cron.daily/logrotate.back /etc/cron.daily/logrotate
 
 #for docker
 dpkg -i  /packages/docker/*.deb
