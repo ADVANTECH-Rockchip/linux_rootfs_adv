@@ -28,9 +28,9 @@ start)
     mount /dev/disk/by-partlabel/userdata /userdata
 
 	#power down-up typec usb
-    echo 0 > /sys/class/gpio/gpio151/value
-    sleep 1
-    echo 1 > /sys/class/gpio/gpio151/value
+    # echo 0 > /sys/class/gpio/gpio151/value
+    # sleep 1
+    # echo 1 > /sys/class/gpio/gpio151/value
 
 	#set gpu freq
     echo performance >  /sys/devices/platform/ff9a0000.gpu/devfreq/ff9a0000.gpu/governor
