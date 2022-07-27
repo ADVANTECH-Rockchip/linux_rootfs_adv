@@ -103,6 +103,9 @@ apt-get install -y qt5-qmake
 
 #---------------Adjust--------------
 systemctl enable advinit.service
+systemctl enable adv-boot-times.service
+systemctl disable adv-poweroff.service
+systemctl disable triggerhappy.service
 
 #for login
 echo "linaro:123456" | chpasswd
