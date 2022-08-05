@@ -3,7 +3,7 @@ Description=Advantech boot times
 After=advinit.service
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart=/usr/local/bin/adv_boot_times.sh
 
 [Install]

@@ -3,8 +3,6 @@ Description=Setup advantech init enviroment
 After=advinit.service
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart=/usr/local/bin/adv_power_test.sh
 
-[Install]
-WantedBy=multi-user.target

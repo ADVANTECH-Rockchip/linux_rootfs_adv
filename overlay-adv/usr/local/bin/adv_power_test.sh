@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sleep 30
 if [ -f /data/BurnIn/atx ];then
