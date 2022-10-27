@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Note: this is a sample and will not be run as is.
+
+# xrandr -o left
+xrandr --output HDMI-1 --rotate left --below DSI-1
+DSI_TP_NAME="fts_ts"
+HDMI_TP_NAME="WingCool Inc. TouchScreen"
+
+DSI_TP_IDS=`xinput | grep "${DSI_TP_NAME}" | cut -d '=' -f 2 | cut -f 1`
+HDMI_TP_IDS=`xinput | grep "${HDMI_TP_NAME}" | cut -d '=' -f 2 | cut -f 1`
+
+for id in ${DSI_TP_IDS} ;do
+    xinput map-to-output $id DSI-1
+done
+
+for id in ${HDMI_TP_IDS} ;do
+    xinput map-to-output $id HDMI-1
+done
+
+# show Logo
+feh -F /etc/lxdm/logo.png &
+sleep 2
+ps -ef |grep feh |awk '{print $2}' |xargs kill -9
+

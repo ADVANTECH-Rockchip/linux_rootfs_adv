@@ -25,7 +25,8 @@ trap finish ERR
 cat <<EOF | sudo chroot $TARGET_ROOTFS_DIR
 
 #--------- install base app ---------
-
+apt-get update
+apt-get install -y xinput
 
 #---------------Adjust--------------
 
