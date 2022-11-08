@@ -3,6 +3,7 @@
 # Note: this is a sample and will not be run as is.
 
 # xrandr -o left
+xrandr --output DSI-1 --primary
 xrandr --output HDMI-1 --rotate left --below DSI-1
 DSI_TP_NAME="fts_ts"
 HDMI_TP_NAME="WingCool Inc. TouchScreen"

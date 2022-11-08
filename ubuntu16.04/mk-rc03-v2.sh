@@ -24,6 +24,9 @@ trap finish ERR
 #------------------------------------------------------------------------------------------
 cat <<EOF | sudo chroot $TARGET_ROOTFS_DIR
 
+chown root:root /tmp
+chmod 1777 /tmp
+
 #--------- install base app ---------
 apt-get update
 apt-get install -y xinput
