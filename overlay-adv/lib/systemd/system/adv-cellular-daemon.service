@@ -1,0 +1,10 @@
+[Unit]
+Description=monitor cellular module & SIM status
+After=advinit.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/adv_cellular_daemon.sh
+
+[Install]
+WantedBy=multi-user.target
