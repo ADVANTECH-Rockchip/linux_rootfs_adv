@@ -9,7 +9,7 @@ After=systemd-logind.service
 User=root
 Group=root
 
-Type=sample
+Type=simple
 ExecStart=/usr/local/bin/adv_bootprocess.sh
 KillMode=control-group
 KillSignal=SIGKILL

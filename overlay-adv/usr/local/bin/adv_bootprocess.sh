@@ -26,8 +26,8 @@ fi
 if [[ x$flag1 == "xactive" ]] && [[ x$flag2 == "xactive" ]] && [[ x$flag3 == "xactive" ]] && [[ x$flag4 == "xactive" ]];then
     # disable WDT
     echo "[ADV] service boot success" > /dev/ttyFIQ0
-    if [ -f "/proc/bootflag" ];then
-        echo 1 > /proc/bootflag
+    if [ -f "/sys/class/adv_bootprocess_class/adv_bootprocess_device/timer_flag" ];then
+        echo 1 > /sys/class/adv_bootprocess_class/adv_bootprocess_device/timer_flag
     fi
 else
     echo "[ADV] service boot fail" > /dev/ttyFIQ0
