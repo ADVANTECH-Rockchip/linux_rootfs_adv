@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #########################################################
 #   description: PowerOnOff test script
 #   usage: PowerOnOff.sh
