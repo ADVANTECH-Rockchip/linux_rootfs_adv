@@ -52,6 +52,7 @@ apt-get install -y iperf3
 apt-get install -y pciutils
 apt-get install -y hdparm
 apt-get install -y ftp
+apt-get install -y exfat-fuse exfat-utils
 #for rpmb
 apt-get install -y mmc-utils
 #for can
