@@ -4,7 +4,6 @@
 	daily
 	missingok
 	notifempty
-	delaycompress
 	compress
 	size 5M
 	postrotate
@@ -30,7 +29,6 @@
 	missingok
 	notifempty
 	compress
-	delaycompress
 	sharedscripts
 	size 5M
 	postrotate

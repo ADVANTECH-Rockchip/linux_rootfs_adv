@@ -1,0 +1,10 @@
+[Unit]
+Description=Advantech sync rtc_time to system_time
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=8h
+
+
+[Install]
+WantedBy=timers.target

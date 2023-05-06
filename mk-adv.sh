@@ -74,14 +74,15 @@ apt-get install -y mosquitto mosquitto-dev libmosquitto-dev
 
 #for sync time
 apt-get install -y cron
-mv /etc/crontab.back /etc/crontab
+# mv /etc/crontab.back /etc/crontab
 
 #for Chinese fonts
 apt-get install -y xfonts-intl-chinese xfonts-wqy ttf-wqy-microhei ttf-dejavu
 
 # For logrotate limit log size
 apt-get install -y logrotate
-mv /etc/cron.daily/logrotate.back /etc/cron.daily/logrotate
+# mv /etc/cron.daily/logrotate.back /etc/cron.daily/logrotate
+mv /lib/systemd/system/logrotate.timer.back /lib/systemd/system/logrotate.timer
 
 #for docker
 dpkg -i  /packages/docker/*.deb
@@ -105,6 +106,8 @@ apt-get install -y qt5-qmake
 #---------------Adjust--------------
 systemctl enable advinit.service
 systemctl enable adv-boot-times.service
+systemctl enable adv-sync-rtc-time.timer
+systemctl enable logrotate.timer
 systemctl disable adv-poweroff.service
 systemctl disable triggerhappy.service
 

@@ -1,0 +1,7 @@
+[Unit]
+Description=Advantech sync rtc_time to system_time
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/adv_timesync.sh
+
